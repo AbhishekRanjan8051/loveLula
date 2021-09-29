@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/index.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="sliderContainer">
+        <div class="slideShow">
+          <div class="sliderMain" id="slider_main_div">
+            <div class="slide left">
+              <span id="leftMoveSlider">&#10094;</span>
+            </div>
+            <div class="slide right">
+              <span id="rightMoveSlider">&#10095;</span>
+            </div>
+            <div class="btm-sliders">
+              <span id="point1"></span>
+              <span id="point2"></span>
+              <span id="point3"></span>
+              <span id="point4"></span>
+              <span id="point5"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="email">
+        <div>Receive the latest LoveLula offers by Email</div>
+        <input type="text" placeholder="Email" />
+        <div><i class="fa fa-envelope">Subscribe</i></div>
+      </div>
+
+      <div class="linecontainer">
+        <div class="line"></div>
+        <div class="linetext">New In-</div>
+        <div class="line"></div>
+      </div>
+
+      <div id="newin"></div>
+
+      <div class="linecontainer2">
+        <div class="line2"></div>
+        <div class="linetext2">Top Selling Natural Products</div>
+        <div class="line2"></div>
+      </div>
+      <div id="topselling"></div>
+
+      <div class="line3"></div>
+      <div class="upfotter">
+        <div class="upfooterimg">
+          <img src="../image/FB_Club_Small_Box.jpeg" alt="" />
+          <img src="../image/RBMSmallBox.jpeg" alt="" />
+          <img src="../image/LL_BBOX_2019.jpeg" alt="" />
+          <img src="../image/GWP_Small_Box.jpeg" alt="" />
+          <img src="../image/ManOrganicBox_new.jpeg" alt="" />
+          <img src="../image/Sale_Small_Box_copy.jpeg" alt="" />
+        </div>
+        <div class="award">
+          <img
+            src="../image/homepage-awards-3baf7ca8a960c0f95a884a432e2a472d9450c0bea5e97c0bfec51d286742b623.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import navbar from "../js/navbar.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+</script>
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
+<script>
+  function slideImage() {
+    let i = 0;
+    let point1 = document.getElementById("point1");
+    let point2 = document.getElementById("point2");
+    let point3 = document.getElementById("point3");
+    let point4 = document.getElementById("point4");
+    let point5 = document.getElementById("point5");
+    let leftMove = document.getElementById("leftMoveSlider");
+    let rightMove = document.getElementById("rightMoveSlider");
+
+    let slider_main_div = document.getElementById("slider_main_div");
+
+    let div = document.createElement("div");
+    div.setAttribute("class", ".smooth");
+    let arr = [
+      "https://media6.ppl-media.com/tr:w-1280,c-at_max/mediafiles/ecomm/misc/1626714490_skinstation-banner-web.png",
+      "https://media6.ppl-media.com/tr:w-1280,c-at_max/mediafiles/ecomm/misc/1626775010_web-home-page-1298-px-_418-px.jpg",
+      "https://media6.ppl-media.com/tr:w-1280,c-at_max/mediafiles/ecomm/misc/1626705125_tfs_web.jpg",
+      "https://media6.ppl-media.com/tr:w-1280,c-at_max/mediafiles/ecomm/misc/1626705285_carmesi_web.jpg",
+      "https://media6.ppl-media.com/tr:w-1280,c-at_max/mediafiles/ecomm/misc/1626705429_garnier_web.jpg",
+    ];
+    let image = document.createElement("img");
+
+    // 5 Second interval set here
+    // function setInt() {
+    //   setInterval(function () {
+    //     i++;
+    //     if (i == arr.length) {
+    //       i = 0;
+    //     }
+    //     // Function For bullet point
+    //     arrayIndexsAtOnce(i);
+    //     image.src = arr[i];
+    //     div.append(image);
+    //   }, 3000);
+    // }
+    // setInt();
+
+    // Left Move Slider by Left Arrow
+    function leftMoveSlider() {
+      isClickPrev = true;
+      i--;
+      if (i == -1) {
+        i = arr.length - 1;
+      }
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Right Move Slider by Right Arrow
+    function rightMoveSlider() {
+      i++;
+      if (i == arr.length) {
+        i = 0;
+      }
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Slide by clicking on bullet-1
+    function point1Fun() {
+      i = 0;
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Slide by clicking on bullet-2
+    function point2Fun() {
+      i = 1;
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Slide by clicking on bullet-3
+    function point3Fun() {
+      i = 2;
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Slide by clicking on bullet-4
+    function point4Fun() {
+      i = 3;
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Slide by clicking on bullet-5
+    function point5Fun() {
+      i = 4;
+      // Function For bullet point
+      arrayIndexsAtOnce(i);
+      image.src = arr[i];
+      div.append(image);
+    }
+
+    // Left & Right Arrow shift
+    leftMove.addEventListener("click", leftMoveSlider);
+    rightMove.addEventListener("click", rightMoveSlider);
+
+    // Shift by click on code
+    point1.addEventListener("click", point1Fun);
+    point2.addEventListener("click", point2Fun);
+    point3.addEventListener("click", point3Fun);
+    point4.addEventListener("click", point4Fun);
+    point5.addEventListener("click", point5Fun);
+
+    // To Reduce code complexity checking every if sending the color according
+    function arrayIndexsAtOnce(i) {
+      if (i == 0) {
+        return arr0Index();
+      } else if (i == 1) {
+        return arr1Index();
+      } else if (i == 2) {
+        return arr2Index();
+      } else if (i == 3) {
+        return arr3Index();
+      } else if (i == 4) {
+        return arr4Index();
+      }
+    }
+
+    // Below are function to check, set & remove bullet colors [for array of 5 length]
+    function arr0Index() {
+      point1.setAttribute("id", "firstBullet");
+      point2.removeAttribute("id", "firstBullet");
+      point3.removeAttribute("id", "firstBullet");
+      point4.removeAttribute("id", "firstBullet");
+      point5.removeAttribute("id", "firstBullet");
+    }
+    function arr1Index() {
+      point1.removeAttribute("id", "firstBullet");
+      point2.setAttribute("id", "firstBullet");
+      point3.removeAttribute("id", "firstBullet");
+      point4.removeAttribute("id", "firstBullet");
+      point5.removeAttribute("id", "firstBullet");
+    }
+    function arr2Index() {
+      point1.removeAttribute("id", "firstBullet");
+      point2.removeAttribute("id", "firstBullet");
+      point3.setAttribute("id", "firstBullet");
+      point4.removeAttribute("id", "firstBullet");
+      point5.removeAttribute("id", "firstBullet");
+    }
+    function arr3Index() {
+      point1.removeAttribute("id", "firstBullet");
+      point2.removeAttribute("id", "firstBullet");
+      point3.removeAttribute("id", "firstBullet");
+      point4.setAttribute("id", "firstBullet");
+      point5.removeAttribute("id", "firstBullet");
+    }
+    function arr4Index() {
+      point1.removeAttribute("id", "firstBullet");
+      point2.removeAttribute("id", "firstBullet");
+      point3.removeAttribute("id", "firstBullet");
+      point4.removeAttribute("id", "firstBullet");
+      point5.setAttribute("id", "firstBullet");
+    }
+
+    slider_main_div.append(div);
+  }
+
+  slideImage();
+</script>
+<script>
+  async function create() {
+    let response = await fetch("http://localhost:2345/indexs");
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    let { index } = data;
+
+    index.forEach(({ image, description, price }) => {
+      let divs = document.getElementById("newin");
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      let desc = document.createElement("p");
+
+      let price_p = document.createElement("h3");
+
+      // let btn = document.createElement("button");
+
+      // btn.setAttribute("btn", add);
+
+      img.src = image;
+
+      desc.innerText = description;
+      price_p.innerText = price;
+
+      div.append(img, desc, price_p);
+      divs.append(div);
+    });
+  }
+  create();
+  async function createtop() {
+    let response = await fetch("http://localhost:2345/indexs/top");
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    let { indextop } = data;
+
+    indextop.forEach(({ image, description, price }) => {
+      let divss = document.getElementById("topselling");
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      let desc = document.createElement("p");
+
+      let price_p = document.createElement("h3");
+
+      img.src = image;
+
+      desc.innerText = description;
+      price_p.innerText = price;
+
+      div.append(img, desc, price_p);
+      divss.append(div);
+    });
+  }
+  createtop();
+</script>

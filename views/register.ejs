@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/register.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="newCustomer">
+        <h1 class="newCustomerHeading">New Customer</h1>
+      </div>
+
+      <div class="formContainer">
+        <div class="form">
+          <form action="/register.ejs" method="POST">
+            <div class="emailDiv">
+              <p>Enter your email address</p>
+              <input
+                type="email"
+                id="email"
+                placeholder="enter your email id"
+                autocomplete="username"
+                class="formInput"
+                name="email"
+              />
+            </div>
+
+            <div class="passwordDiv">
+              <p>password</p>
+              <input
+                type="password"
+                id="password"
+                autocomplete="current-password"
+                placeholder="enter your password"
+                class="formInput"
+                name="password"
+              />
+            </div>
+
+            <div class="phoneNo">
+              <p>Phone Number</p>
+              <input
+                type="text"
+                id="phoneNumber"
+                placeholder="enter your Phone Number"
+                class="formInput"
+                name="phoneno"
+              />
+            </div>
+
+            <input type="submit" placeholder="Create User" class="signup" />
+          </form>
+        </div>
+        <div class="rightImage">
+          <img
+            src="https://www.lovelula.com/assets/lovelula/registration_panel-621d4df9a212d0a6751630bae9954303af5464651fb8a7c8bf8b34812a62d36c.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
+
+<script type="module">
+  import navbar from "../js/navbar.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+</script>

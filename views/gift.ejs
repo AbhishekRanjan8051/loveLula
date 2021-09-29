@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/gift.css" />
+  <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="one">
+      <div class="productsname">
+        <div>Products</div>
+        <div><b>Gifts</b></div>
+        <div>Candels</div>
+        <div>Fragrances</div>
+        <div>Gift Sets</div>
+        <div>Gift Vouchers</div>
+        <div>Gifts for Men</div>
+      </div>
+    </div>
+    <div class="two">
+
+      <img src="https://www.lovelula.com/spree/taxons/headers/81987/original/gifts.jpg?1604400014" alt="" />
+      <br />
+      <br />
+      <div class="linecontainer">
+        <div class="line"></div>
+        <div class="linetext">Natural and Organic Gifts</div>
+        <div class="line"></div>
+      </div>
+      <br />
+      <div class="details">
+        It’s the thought that counts, and luckily our favourite natural and
+        organic brands have thought of everything! From indulgent treats to
+        tempting try-me kits; body and haircare sets to makeup and manicure
+        kits; manly must-haves to comforting candles.
+      </div>
+      <div class="details">
+        So be inspired and give a gift that shows how much you care.
+      </div>
+      <br />
+      <div class="dotted"></div>
+
+      <div id="datacollection"></div>
+
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  async function create() {
+    let response = await fetch("http://localhost:2345/gifts");
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    let { gifts } = data;
+
+    gifts.forEach(({ image, title, description,price }) => {
+
+      let divs = document.getElementById("datacollection")
+
+      let div = document.createElement("div")
+
+      let img = document.createElement("img")
+
+      let title_p = document.createElement("h2");
+
+      let desc = document.createElement("p");
+
+      let price_p = document.createElement("p");
+
+
+      img.src = image
+
+      title_p.innerText = title
+      desc.innerText = description
+      price_p.innerText = price
+      // console.log('title:', title)
+      // console.log('image:', image)
+
+      div.append(img, title_p, desc,price_p)
+      divs.append(div)
+
+    })
+
+  }
+  create();
+</script>
+<script type="module">
+  import navbar from "../js/navbar.js";
+
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+</script>
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>

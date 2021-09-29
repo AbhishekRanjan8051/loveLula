@@ -1,0 +1,52 @@
+.line {
+  width: 45%;
+  border: 1px solid black;
+  background-color: black;
+  height: 1px;
+  margin-top: 5px;
+}
+.first {
+  text-align: center;
+}
+.upper {
+  display: flex;
+  gap: 5%;
+}
+.letter {
+  display: flex;
+  margin: 10px 0 0 2.5%;
+  gap: 2.8%;
+  font-weight: lighter;
+}
+.letter div {
+  cursor: pointer;
+}
+.a {
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  border-bottom: 3px solid rgb(128, 124, 124);
+  padding: 20px;
+}
+.startletters {
+  font-weight: bold;
+  font-size: large;
+}
+.name {
+  font-weight: normal;
+  font-size: large;
+  cursor: pointer;
+}
+.b {
+  width: 100%;
+  height: 50px;
+  margin-top: 25px;
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  border-bottom: 3px solid rgb(128, 124, 124);
+  padding: 20px;
+}

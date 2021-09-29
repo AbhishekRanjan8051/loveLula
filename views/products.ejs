@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/products.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="one">
+        <div class="productsname">
+          <div>
+            <b>Products</b>
+            <div>Treats Under £20</div>
+            <div>Skincare</div>
+            <div>Cosmetics</div>
+            <div>Bodycare</div>
+            <div>Haircare</div>
+            <div>Nails</div>
+            <div>Fragrances</div>
+            <div>Gifts</div>
+            <div>Candels</div>
+            <div>Men</div>
+            <div>Mothers and baby</div>
+            <div>Accessorirs</div>
+            <div>Special offers</div>
+            <div>Dentals</div>
+            <div>Starer kits and travel</div>
+            <div>Vegan</div>
+            <div>multi Taskers</div>
+            <div>Wipes</div>
+            <div>Suncare</div>
+            <div>Aches and pain</div>
+          </div>
+        </div>
+      </div>
+      <div class="two">
+        <div class="linecontainer">
+          <div class="line"></div>
+          <div class="linetext">Natural and Organic Beauty Products</div>
+          <div class="line"></div>
+        </div>
+
+        <div id="datacollection"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  async function create() {
+    let response = await fetch("http://localhost:2345/products");
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    let { index } = data;
+
+    index.forEach(({ image, title, description, price, button }) => {
+      let divs = document.getElementById("datacollection");
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      let title_p = document.createElement("h2");
+
+      let desc = document.createElement("p");
+
+      let price_p = document.createElement("p");
+
+      let btn = document.createElement("button");
+
+      btn.innerText = button;
+
+      img.src = image;
+
+      title_p.innerText = title;
+      desc.innerText = description;
+      price_p.innerText = price;
+      // console.log('title:', title)
+      // console.log('image:', image)
+
+      div.append(img, title_p, desc, price_p, btn);
+      divs.append(div);
+    });
+  }
+  create();
+</script>
+
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
+
+<script type="module">
+  import navbar from "../js/navbar.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+</script>

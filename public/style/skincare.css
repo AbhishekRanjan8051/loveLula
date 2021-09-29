@@ -1,0 +1,72 @@
+.line {
+  width: 29%;
+  background-color: #e5e9e9;
+  height: 4px;
+  margin-top: 10px;
+}
+.linetext {
+  font-size: 22px;
+  width: fit-content;
+}
+.linecontainer {
+  display: flex;
+  gap: 10px;
+  margin-left: px;
+}
+/* .productsname div {
+  border: 1px solid black;
+} */
+.insidetwo {
+  margin-left: 15px;
+}
+.main {
+  display: flex;
+}
+.one {
+  /* height: 500px; */
+  width: 18%;
+  /* background-color: green; */
+}
+.two {
+  /* height: 500px; */
+  width: 100%;
+  /* background-color: rgb(218, 118, 26); */
+  border-left: 2px solid grey;
+}
+.productsname div {
+  /* margin:0 0 0 5px; */
+  padding: 8px;
+  border-bottom: 0.2px solid rgb(209, 202, 202);
+}
+.productsname div:last-child {
+  border-bottom: none;
+}
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
+
+#datacollection {
+  display: grid;
+  grid-template-columns: repeat(4, 21%);
+  padding: 2%;
+  grid-gap: 45px;
+  /* justify-content: center; */
+}
+#datacollection div {
+  border-right: 1px solid rgb(194, 192, 192);
+}
+#datacollection img {
+  width: 150px;
+}
+
+#datacollection h2 {
+  font-size: 20px;
+  margin-left: 15px;
+  flex-wrap: nowrap;
+}
+#datacollection button {
+  border: 3px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}

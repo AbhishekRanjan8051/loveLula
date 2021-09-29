@@ -1,0 +1,72 @@
+
+.newCustomer{
+    width: 100%;
+    border-bottom: 2px dotted grey;
+}
+.formContainer{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+.form {
+    width:45%;
+}
+.form p{
+    margin: 0;
+    font-size: small;
+}
+.form div{
+    margin-bottom: 25px;
+}
+.formInput{
+   width: 50%;
+   height: 30px;
+}
+.createUser{
+    width: 30%;
+    height: 30px;
+    display: flex;
+    margin-left: 35px;
+    align-content: center;
+    justify-content: center;
+    font-size: large;
+    background-color: rgb(236,109,145);
+    color: white;
+}
+.footer{
+    width: 100%;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    margin-top: 15px;
+}
+.footer li {
+    display: inline;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.footer li:hover{
+    cursor: pointer;
+}
+.copyright  div{
+   margin-right: 80px;
+   font-size: small;
+}
+.copyright{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.signup{
+        width: 30%;
+        height: 30px;
+        display: flex;
+        margin-left: 35px;
+        align-content: center;
+        justify-content: center;
+        font-size: large;
+        background-color: rgb(236,109,145);
+        color: white;
+}

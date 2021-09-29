@@ -1,0 +1,53 @@
+.navbar {
+  width: 100%;
+  height: 10rem;
+  margin: auto;
+  position: sticky;
+}
+.main {
+  width: 70%;
+  margin: auto;
+}
+
+.undertopnav {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid rgba(19, 18, 18, 0.933);
+}
+.leftuppernavbar {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+.rightuppernavbar {
+  display: flex;
+  flex-direction: row;
+  margin-left: 12rem;
+  width: 10%;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.topnavbottom {
+  display: flex;
+  flex-direction: row;
+  gap: 16.5rem;
+}
+.nav {
+  height: 30px;
+  width: 100%;
+  background-color: #5c6067;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3rem;
+}
+.nav div a {
+  margin-left: 20px;
+  margin-top: 15px;
+  color: #f8fbff;
+  font-weight: lighter;
+  font-size: small;
+  cursor: pointer;
+  text-decoration: none;
+}

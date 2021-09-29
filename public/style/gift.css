@@ -1,0 +1,84 @@
+.line {
+  width: 35%;
+  background-color: #e5e9e9;
+  height: 4px;
+  margin-top: 10px;
+}
+
+.linetext {
+  font-size: 22px;
+  width: fit-content;
+}
+
+.linecontainer {
+  display: flex;
+  gap: 10px;
+  /* margin-left: px; */
+}
+
+.productsname div {
+  border-bottom: 1px solid rgb(206, 200, 200);
+  border-right: 1px solid rgb(206, 200, 200);
+  margin-right: 15px;
+}
+.productsname div:last-child{
+border-bottom: 0px solid rgb(206, 200, 200);
+}
+
+.insidetwo {
+  margin-left: 15px;
+}
+
+.insidetwo img {
+  width: 99%;
+}
+
+.main {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.one {
+  /* height: 500px; */
+  width: 20%;
+  /* background-color: green; */
+}
+
+.two {
+  /* height: 500px; */
+  width: 80%;
+  /* background-color: rgb(218, 118, 26); */
+}
+
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
+
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
+
+.details {
+  margin: 0 30px;
+}
+
+#datacollection {
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  padding: 2%;
+  grid-gap: 45px;
+  /* justify-content: center; */
+}
+
+#datacollection img {
+  width: 200px;
+}
+
+#datacollection h2 {
+  font-size: 20px;
+  margin-left: 15px;
+  flex-wrap: nowrap;
+}

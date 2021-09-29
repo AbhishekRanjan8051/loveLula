@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/body.css" />
+    <link rel="stylesheet" href="./navbar/navbar.css" />
+    <link rel="stylesheet" href="./footer/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="one">
+        <div class="productsname">
+          <div>Products</div>
+          <div><b>Bodycare</b></div>
+          <div>Anti Cellulite</div>
+          <div>Bath & Shower</div>
+          <div>Deodorants</div>
+          <div>Hands & Feet</div>
+          <div>Insect Repellent</div>
+          <div>Lotions & Butters</div>
+          <div>Moisturisers</div>
+          <div>Oils</div>
+          <div>Powders</div>
+          <div>Scrubs</div>
+          <div>Soaps</div>
+          <div>Try Me Kits & Travel Sizes</div>
+          
+        </div>
+      </div>
+      <div class="two">
+        <div class="insidetwo">
+          <img
+            src="https://www.lovelula.com/spree/taxons/headers/7233/original/bodycare.jpg?1547742220"
+            alt=""
+          />
+          <div class="linecontainer">
+            <div class="line"></div>
+            <div class="linetext">Natural and Organic Body Care Products</div>
+            <div class="line"></div>
+          </div>
+          <br/>
+          <div class="details">
+            Protect, nourish & strengthen. Pure, naturally derived ingredients
+            work in harmony with your body’s own processes. Choose products
+            crafted with passion and wisdom and feel your way to a more
+            beautiful future.
+          </div>
+          <br />
+          <div class="dotted"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import footer from "./footer/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
+
+<script type="module">
+  import navbar from "./navbar/navbar.js";
+
+  import footer from "./footer/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
+</script>

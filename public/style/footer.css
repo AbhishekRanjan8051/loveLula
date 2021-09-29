@@ -1,0 +1,33 @@
+* {
+  font-family: open sans;
+}
+
+.maincontainer {
+  width: 70%;
+  margin: auto;
+}
+.footer {
+  width: 100%;
+  border-bottom: 2px solid #cdced0;
+  border-top: 2px solid #cdced0;
+  margin-top: 15px;
+}
+.footer li {
+  display: inline;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.footer li:hover {
+  cursor: pointer;
+}
+.copyright div {
+  margin-right: 80px;
+  font-size: small;
+}
+.copyright {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}

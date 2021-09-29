@@ -1,0 +1,66 @@
+.line {
+  width: 32%;
+
+  background-color: #e5e9e9;
+  height: 4px;
+  margin-top: 10px;
+}
+.linecontainer {
+  display: flex;
+  gap: 20px;
+}
+.linetext {
+  margin-top: 5px;
+}
+
+.productsname div {
+  /* margin:0 0 0 5px; */
+  padding: 8px;
+  border-bottom: 0.2px solid rgb(209, 202, 202);
+}
+.productsname div:last-child {
+  border-bottom: none;
+}
+.one {
+  /* height: 500px; */
+  width: 15%;
+  /* background-color: green; */
+}
+
+.two {
+  /* height: 500px; */
+  width: 80%;
+  /* margin-right: 150px; */
+}
+.main {
+  display: flex;
+  /* width: 80%; */
+  margin: auto;
+}
+
+#datacollection {
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  padding: 2%;
+  grid-gap: 45px;
+  /* justify-content: center; */
+  border-left: 2px solid grey;
+}
+#datacollection div {
+  border-right: 1px solid rgb(194, 192, 192);
+
+}
+#datacollection img {
+  width: 150px;
+}
+
+#datacollection h2 {
+  font-size: 20px;
+  margin-left: 15px;
+  flex-wrap: nowrap;
+}
+#datacollection button {
+  border: 3px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}

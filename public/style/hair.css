@@ -1,0 +1,43 @@
+.line {
+  width: 26%;
+  background-color: #e5e9e9;
+  height: 4px;
+  margin-top: 10px;
+}
+.linetext {
+  font-size: 22px;
+  width: fit-content;
+}
+.linecontainer {
+  display: flex;
+  gap: 10px;
+  margin-left: px;
+}
+.productsname div {
+  border: 1px solid black;
+}
+.insidetwo {
+  margin-left: 15px;
+}
+.main {
+  display: flex;
+}
+.one {
+  /* height: 500px; */
+  width: 18%;
+  background-color: green;
+}
+.two {
+  /* height: 500px; */
+  width: 100%;
+  background-color: rgb(218, 118, 26);
+}
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
+
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
