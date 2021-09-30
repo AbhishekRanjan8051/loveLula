@@ -1,4 +1,3 @@
-
 const express = require("express");
 
 const mongoose = require("mongoose");
@@ -13,15 +12,41 @@ const app = express();
 
 app.use(express.json());
 
-// app.use(express.urlencoded({ extended: false }));
-
 app.use(express.static("public"));
 
 app.set("view Engine", "ejs");
 
+const skincareSchema = new mongoose.Schema(
+  {
+    image: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+    button: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  }
+);
 
+const Skincare = mongoose.model("skincares", skincareSchema);
 
-// index ============
+const productSchema = new mongoose.Schema(
+  {
+    image: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+    button: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  }
+);
+
+const Product = mongoose.model("products", productSchema);
 
 const indexSchema = new mongoose.Schema(
   {
@@ -38,7 +63,28 @@ const indexSchema = new mongoose.Schema(
 
 const Index = mongoose.model("indexs", indexSchema);
 
-// =================================================================
+const giftSchema = new mongoose.Schema(
+  {
+    image: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  }
+);
+
+const Gift = mongoose.model("gifts", giftSchema);
+
+// const Index = require("./models/index.model");
+
+// const Gift = require("./models/gift.model");
+
+// const Product = require("./models/product.model");
+
+// const Skincare = require("./models/skin.model");
 
 app.post("/indexs", async (req, res) => {
   const index = await Index.create(req.body);
@@ -62,59 +108,50 @@ app.get("/indexs/top", async (req, res) => {
   return res.status(200).json({ indextop });
 });
 
+//================================================
 
- //================================================
+// const registerSchema = new mongoose.Schema(
+//   {
+//     email: { type: String, required: true },
+//     phoneno: { type: Number, required: true },
+//     password: { type: String, require: true },
+//   },
+//   {
+//     versionKey: false,
+//     timestamps: true,
+//   }
+// );
 
-const Gift = require("./models/gift.model");
+// // create collection of user and coonect to mongoose
+// const Register = mongoose.model("registers", registerSchema);
 
+// //----------------------------CRUD API for user------------------------------------
 
+// //post
+// app.post("/registers", async (req, res) => {
+//   // const registers = await Register.create(req.body);
+//   // return res.status(200).send({ registers });
 
-const Product = require("./models/product.model");
+//   const registeruser = new Register({
+//     email: req.body.email,
+//     password: req.body.password,
+//     phoneno: req.body.phoneno,
+//   });
 
-const Skincare = require("./models/skin.model");
+//   const registered = await registeruser.save();
+//   res.status("201").render("index");
+// });
 
-const registerSchema = new mongoose.Schema(
-  {
-    email: { type: String, required: true },
-    phoneno: { type: Number, required: true },
-    password: { type: String, require: true },
-  },
-  {
-    versionKey: false,
-    timestamps: true,
-  }
-);
+// //get user
+// app.get("/registers", async (req, res) => {
+//   const registers = await Register.find().lean().exec();
 
-// create collection of user and coonect to mongoose
-const Register = mongoose.model("registers", registerSchema);
+//   return res.status(200).send({ registers });
 
-//----------------------------CRUD API for user------------------------------------
-
-//post
-app.post("/registers", async (req, res) => {
-  // const registers = await Register.create(req.body);
-  // return res.status(200).send({ registers });
-
-  const registeruser = new Register({
-    email: req.body.email,
-    password: req.body.password,
-    phoneno: req.body.phoneno,
-  });
-
-  const registered = await registeruser.save();
-  res.status("201").render("index");
-});
-
-//get user
-app.get("/registers", async (req, res) => {
-  const registers = await Register.find().lean().exec();
-
-  return res.status(200).send({ registers });
-
-  // return res.render("gift.ejs", {
-  //   users: users,
-  // });
-});
+//   // return res.render("gift.ejs", {
+//   //   users: users,
+//   // });
+// });
 
 //===================================================================================================================
 
@@ -134,8 +171,6 @@ app.get("/gifts", async (req, res) => {
   //   gifts: gifts,
   // });
 });
-
-
 
 app.post("/products", async (req, res) => {
   const index = await Product.create(req.body);
@@ -159,14 +194,25 @@ app.get("/skincares", async (req, res) => {
   return res.status(200).json({ index });
 });
 
+
+
+
+
+// RENDER
+
+app.get("/", async (req, res) => {
+  return res.render("index.ejs");
+});
+
 app.get("/views/index.ejs", async (req, res) => {
   return res.render("index.ejs");
 });
+
 app.get("/gift.ejs", async (req, res) => {
-  return res.render("../views/gift.ejs");
+  return res.render("gift.ejs");
 });
 app.get("/views/gift.ejs", async (req, res) => {
-  return res.render("../views/gift.ejs");
+  return res.render("gift.ejs");
 });
 app.get("/views/hair.ejs", async (req, res) => {
   return res.render("hair.ejs");
@@ -189,8 +235,6 @@ app.get("/register.ejs", async (req, res) => {
 app.post("/register.ejs", async (req, res) => {
   return res.render("register.ejs");
 });
-
-
 
 // /listening server on port
 app.listen(2345, async function () {

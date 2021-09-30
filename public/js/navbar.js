@@ -6,12 +6,12 @@ function navbar() {
             <div><i class="fas fa-home"></i></div>
             <div><i class="fas fa-phone-alt">Orders 0800 731 1256</i></div>
 
-            <div><i class="fas fa-envelope">Email us</i></div>
+            <div class="mailus"> <a href="mailto:info@lovelula.com"><i class="fas fa-envelope">Email us</i></a></div>
             <div>Subscribe to our Newsletter</div>
-            <div>
+            <form action = "https://amarya.us2.list-manage.com/subscribe/post?u=dfb1c82d9e05e8d57afab8976&id=6ac47c8bc2" method ="post">
               <input type="text" placeholder="Email us" />
               <button><i class="fa fa-envelope"></i></button>
-            </div>
+            </form>
           </div>
           <div class="rightuppernavbar">
             <div><i class="fas fa-shopping-cart">Basket</i></div>
@@ -39,7 +39,7 @@ function navbar() {
 
           <div><img src="../image/lovelula.png" alt="" /></div>
           <div><img src="../image/freedelivery.png" alt="">
-            <form action=""><input type="text"><button><i class = "fas fa-envelope"></i></button></form>
+            <form action="../../views/products.ejs" method="get"><input type="text"><button><i class = "fas fa-envelope"></i></button></form>
           </div>
         </div>
         <div class="nav">
