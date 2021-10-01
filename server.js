@@ -2,6 +2,8 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
+const bodyParser = require("body-parser");
+
 const connect = () => {
   return mongoose.connect(
     "mongodb+srv://abhishek:abhishek123456@cluster0.jouxt.mongodb.net/loveLula?retryWrites=true&w=majority"
@@ -11,6 +13,7 @@ const connect = () => {
 const app = express();
 
 app.use(express.json());
+app.use(bodyParser.json());
 
 app.use(express.static("public"));
 
@@ -78,14 +81,6 @@ const giftSchema = new mongoose.Schema(
 
 const Gift = mongoose.model("gifts", giftSchema);
 
-// const Index = require("./models/index.model");
-
-// const Gift = require("./models/gift.model");
-
-// const Product = require("./models/product.model");
-
-// const Skincare = require("./models/skin.model");
-
 app.post("/indexs", async (req, res) => {
   const index = await Index.create(req.body);
 
@@ -108,50 +103,31 @@ app.get("/indexs/top", async (req, res) => {
   return res.status(200).json({ indextop });
 });
 
-//================================================
+//register
 
-// const registerSchema = new mongoose.Schema(
-//   {
-//     email: { type: String, required: true },
-//     phoneno: { type: Number, required: true },
-//     password: { type: String, require: true },
-//   },
-//   {
-//     versionKey: false,
-//     timestamps: true,
-//   }
-// );
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  confirmpassword: { type: String, required: true },
+});
 
-// // create collection of user and coonect to mongoose
-// const Register = mongoose.model("registers", registerSchema);
+const User = mongoose.model("users", userSchema);
 
-// //----------------------------CRUD API for user------------------------------------
+app.post("/users", async (req, res) => {
+  console.log(req.body);
 
-// //post
-// app.post("/registers", async (req, res) => {
-//   // const registers = await Register.create(req.body);
-//   // return res.status(200).send({ registers });
+  const user = await User.findOne({ username: req.body.username })
+    .lean()
+    .exec();
 
-//   const registeruser = new Register({
-//     email: req.body.email,
-//     password: req.body.password,
-//     phoneno: req.body.phoneno,
-//   });
+  if (user != null) return res.status(404);
 
-//   const registered = await registeruser.save();
-//   res.status("201").render("index");
-// });
 
-// //get user
-// app.get("/registers", async (req, res) => {
-//   const registers = await Register.find().lean().exec();
-
-//   return res.status(200).send({ registers });
-
-//   // return res.render("gift.ejs", {
-//   //   users: users,
-//   // });
-// });
+  const newUser = await User.create(req.body);
+  res.send({ newUser });
+  console.log(newUser);
+  res.json({ status: "ok" });
+});
 
 //===================================================================================================================
 
@@ -193,10 +169,6 @@ app.get("/skincares", async (req, res) => {
   const index = await Skincare.find().lean().exec();
   return res.status(200).json({ index });
 });
-
-
-
-
 
 // RENDER
 

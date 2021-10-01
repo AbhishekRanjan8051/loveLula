@@ -12,52 +12,40 @@
 
   <body>
     <div class="main">
-      <div class="newCustomer">
-        <h1 class="newCustomerHeading">New Customer</h1>
-      </div>
+      <h1 class="maincous">New Coustumers</h1>
+      <div class="dotted"></div>
 
-      <div class="formContainer">
-        <div class="form">
-          <form action="/register.ejs" method="POST">
-            <div class="emailDiv">
-              <p>Enter your email address</p>
-              <input
-                type="email"
-                id="email"
-                placeholder="enter your email id"
-                autocomplete="username"
-                class="formInput"
-                name="email"
-              />
-            </div>
-
-            <div class="passwordDiv">
-              <p>password</p>
-              <input
-                type="password"
-                id="password"
-                autocomplete="current-password"
-                placeholder="enter your password"
-                class="formInput"
-                name="password"
-              />
-            </div>
-
-            <div class="phoneNo">
-              <p>Phone Number</p>
+      <div class="formmaincontainer">
+        <div class="one">
+          <form action="" id="reg-form">
+            <label for="username"
+              >username
               <input
                 type="text"
-                id="phoneNumber"
-                placeholder="enter your Phone Number"
-                class="formInput"
-                name="phoneno"
-              />
-            </div>
-
-            <input type="submit" placeholder="Create User" class="signup" />
+                id="username"
+                name="username"
+                placeholder="Email"
+            /></label>
+            <label for="password"
+              >password
+              <input
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Password"
+            /></label>
+            <label for="confirmpassword"
+              >confirm password
+              <input
+                type="text"
+                id="confirmpassword"
+                name="confirmpassword"
+                placeholder="confirm password"
+            /></label>
+            <input type="submit" class="button" value="Submit" />
           </form>
         </div>
-        <div class="rightImage">
+        <div class="two">
           <img
             src="https://www.lovelula.com/assets/lovelula/registration_panel-621d4df9a212d0a6751630bae9954303af5464651fb8a7c8bf8b34812a62d36c.png"
             alt=""
@@ -83,4 +71,32 @@
 
   div.innerHTML = navbar();
   document.body.prepend(div);
+</script>
+
+<script>
+  const form = document.getElementById("reg-form");
+
+  form.addEventListener("submit", registerUser);
+
+  async function registerUser(event) {
+    // event.preventDefault();
+
+    let username = document.getElementById("username").value;
+
+    const password = document.getElementById("password").value;
+
+    const confirmpassword = document.getElementById("confirmpassword").value;
+
+    const result = await fetch("http://localhost:2345/users", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        confirmpassword,
+      }),
+    }).then((res) => res.json());
+  }
 </script>
