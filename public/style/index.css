@@ -48,8 +48,8 @@
   border-bottom: 1px solid grey;
 }
 input[type="text"] {
-  height: 10px;
-  width: 200px;
+  height: 15px;
+  width: 150px;
 }
 .line {
   width: 45%;
