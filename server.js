@@ -122,11 +122,30 @@ app.post("/users", async (req, res) => {
 
   if (user != null) return res.status(404);
 
-
   const newUser = await User.create(req.body);
   res.send({ newUser });
   console.log(newUser);
   res.json({ status: "ok" });
+});
+
+app.get("/users", async (req, res) => {
+  const user = await User.find().lean().exec();
+  return res.status(200).send({ user });
+});
+
+app.post("logins", async (req, res) => {
+  const user = await User.findOne({ username: req.body.username })
+    .lean()
+    .exec();
+  if (user === null)
+    return res.status(404).json({ error: "Invaid logIn credentials" });
+  if (
+    user.password == req.body.password &&
+    user.password == req.body.password
+  ) {
+    res.send({ user });
+    res.json({ status: "ok" });
+  }
 });
 
 //===================================================================================================================
@@ -207,7 +226,9 @@ app.get("/register.ejs", async (req, res) => {
 app.post("/register.ejs", async (req, res) => {
   return res.render("register.ejs");
 });
-
+app.get("/views/login.ejs", async (req, res) => {
+  return res.render("login.ejs");
+});
 // /listening server on port
 app.listen(2345, async function () {
   await connect();

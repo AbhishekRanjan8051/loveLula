@@ -1,0 +1,62 @@
+.dotted {
+  border-top: 5px dotted black;
+  margin-right: 5px;
+}
+.one {
+  width: 30%;
+
+  margin-left: 5px;
+}
+.two {
+  width: 65%;
+ 
+  /* margin-left: 25px; */
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-top: 10px;
+  gap: 5px;
+}
+form input {
+  width: 80%;
+  border-radius: 5px;
+  border-style: groove;
+  padding-left: 10px;
+  /* height: 30px; */
+}
+.maincous {
+  margin-top: 15px;
+}
+.formmaincontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 15px;
+  height: 200px;
+}
+.button {
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  border-style: solid;
+  margin-left: 70px;
+  margin-top: 5px;
+}
+.reftoregisterpage a {
+  text-decoration: none;
+  color: black;
+  
+}
+.reftoregisterpage{
+    margin-top: 10px;
+}
+p{
+    margin-left: 15px;
+   font-weight: 500;
+}

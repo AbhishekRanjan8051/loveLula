@@ -15,7 +15,7 @@ function navbar() {
           </div>
           <div class="rightuppernavbar">
             <div><i class="fas fa-shopping-cart">Basket</i></div>
-            <div>Login</div>
+            <div> <a href="../../views/login.ejs">Login</a></div>
             <div> <a href="../../views/register.ejs">Register</a></div>
           </div>
         </div>
