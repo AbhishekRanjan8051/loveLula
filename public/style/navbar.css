@@ -8,7 +8,7 @@
   width: 70%;
   margin: auto;
 }
-.mailus a{
+.mailus a {
   color: black;
 }
 .undertopnav {
@@ -28,6 +28,11 @@
   width: 10%;
   gap: 0.4rem;
   cursor: pointer;
+}
+.rightuppernavbar div a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 .topnavbottom {
   display: flex;
