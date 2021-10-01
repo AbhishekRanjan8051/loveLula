@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../style/skincare.css" />
+   <link rel="stylesheet" href="../style/skincare.css" />
     <link rel="stylesheet" href="../style/navbar.css" />
     <link rel="stylesheet" href="../style/footer.css" />
     <link
@@ -20,43 +21,39 @@
       <div class="one">
         <div class="productsname">
           <div>Products</div>
-          <div><b>Hair</b></div>
-          <div>Colours</div>
-          <div>Conditioners</div>
-          <div>Shampoos</div>
-          <div>Styling & Treatments</div>
-          <div>Travel Sizes</div>
-          <div>Treatments</div>
-          <div>Volume</div>
+          <div>Cosmetics</div>
+          <div><b>Make Up</b></div>
+          <div>Eyes</div>
+          <div>Face</div>
+          <div>Lips</div>
         </div>
       </div>
       <div class="two">
         <div class="insidetwo">
           <img
-            src="https://www.lovelula.com/spree/taxons/headers/7235/original/haircare.jpg?1547741714"
+            src="https://www.lovelula.com/spree/taxons/headers/86419/original/make-up.jpg?1547742391"
             alt=""
           />
           <div class="linecontainer">
             <div class="line"></div>
-            <div class="linetext">Natural and Organic Hair Care Products</div>
+            <div class="linetext">Natural and Organic Makeup</div>
             <div class="line"></div>
           </div>
-          <br />
-          <div class="details">
-            Become a natural show-off! Your hair is the most visible expression
-            of your inner health. Natural and organic hair products are both
-            luxurious and effective. Pure ingredients infuse vitality, boost
-            shine, add volume, smooth and replenish. Face the world with your
-            head held high.
-          </div>
-          <br />
-          <div class="dotted"></div>
         </div>
          <div id="datacollection"></div>
       </div>
     </div>
   </body>
 </html>
+
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
 
 <script type="module">
   import navbar from "../js/navbar.js";
@@ -66,14 +63,7 @@
   div.innerHTML = navbar();
   document.body.prepend(div);
 </script>
-<script type="module">
-  import footer from "../js/footer.js";
 
-  let div = document.createElement("div");
-
-  div.innerHTML = footer();
-  document.body.append(div);
-</script>
 <script>
   async function create() {
     let response = await fetch("http://localhost:2345/skincares");

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,34 +21,35 @@
       <div class="one">
         <div class="productsname">
           <div>Products</div>
-          <div><b>Hair</b></div>
-          <div>Colours</div>
-          <div>Conditioners</div>
-          <div>Shampoos</div>
-          <div>Styling & Treatments</div>
-          <div>Travel Sizes</div>
-          <div>Treatments</div>
-          <div>Volume</div>
+          <div><b>Vegan</b></div>
+          <div>Accessories</div>
+          <div>Body care</div>
+          <div>Face care</div>
+          <div>Fragrances</div>
+          <div>Hair care</div>
+          <div>Home</div>
+          <div>Makeup</div>
+          <div>Nail Polish</div>
         </div>
       </div>
       <div class="two">
         <div class="insidetwo">
           <img
-            src="https://www.lovelula.com/spree/taxons/headers/7235/original/haircare.jpg?1547741714"
+            src="https://www.lovelula.com/spree/taxons/headers/7246/original/vegan.jpg?1391697774"
             alt=""
           />
+          <br />
+          <br />
           <div class="linecontainer">
             <div class="line"></div>
-            <div class="linetext">Natural and Organic Hair Care Products</div>
+            <div class="linetext">Vegan Beauty Products</div>
             <div class="line"></div>
           </div>
           <br />
           <div class="details">
-            Become a natural show-off! Your hair is the most visible expression
-            of your inner health. Natural and organic hair products are both
-            luxurious and effective. Pure ingredients infuse vitality, boost
-            shine, add volume, smooth and replenish. Face the world with your
-            head held high.
+            Choosing cosmetics and beauty products which do not contain animal
+            ingredients and are not tested on animals is an important part of an
+            ethical, cruelty-free lifestyle…
           </div>
           <br />
           <div class="dotted"></div>
@@ -59,20 +61,21 @@
 </html>
 
 <script type="module">
-  import navbar from "../js/navbar.js";
-
-  let div = document.createElement("div");
-
-  div.innerHTML = navbar();
-  document.body.prepend(div);
-</script>
-<script type="module">
   import footer from "../js/footer.js";
 
   let div = document.createElement("div");
 
   div.innerHTML = footer();
   document.body.append(div);
+</script>
+
+<script type="module">
+  import navbar from "../js/navbar.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = navbar();
+  document.body.prepend(div);
 </script>
 <script>
   async function create() {
@@ -113,5 +116,4 @@
     });
   }
   create();
-  
 </script>

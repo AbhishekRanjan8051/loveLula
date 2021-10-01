@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/body.css" />
-    <link rel="stylesheet" href="./navbar/navbar.css" />
-    <link rel="stylesheet" href="./footer/footer.css" />
+    <link rel="stylesheet" href="../style/skincare.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="../style/footer.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -34,7 +34,6 @@
           <div>Scrubs</div>
           <div>Soaps</div>
           <div>Try Me Kits & Travel Sizes</div>
-          
         </div>
       </div>
       <div class="two">
@@ -48,7 +47,7 @@
             <div class="linetext">Natural and Organic Body Care Products</div>
             <div class="line"></div>
           </div>
-          <br/>
+          <br />
           <div class="details">
             Protect, nourish & strengthen. Pure, naturally derived ingredients
             work in harmony with your body’s own processes. Choose products
@@ -58,13 +57,14 @@
           <br />
           <div class="dotted"></div>
         </div>
+        <div id="datacollection"></div>
       </div>
     </div>
   </body>
 </html>
 
 <script type="module">
-  import footer from "./footer/footer.js";
+  import footer from "../js/footer.js";
 
   let div = document.createElement("div");
 
@@ -73,12 +73,51 @@
 </script>
 
 <script type="module">
-  import navbar from "./navbar/navbar.js";
-
-  import footer from "./footer/footer.js";
+  import navbar from "../js/navbar.js";
 
   let div = document.createElement("div");
 
   div.innerHTML = navbar();
   document.body.prepend(div);
+</script>
+
+<script>
+  async function create() {
+    let response = await fetch("http://localhost:2345/skincares");
+
+    let data = await response.json();
+    console.log("data:", data);
+
+    let { index } = data;
+
+    index.forEach(({ image, title, description, price, button }) => {
+      let divs = document.getElementById("datacollection");
+
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      let title_p = document.createElement("h2");
+
+      let desc = document.createElement("p");
+
+      let price_p = document.createElement("p");
+
+      let btn = document.createElement("button");
+
+      btn.innerText = button;
+
+      img.src = image;
+
+      title_p.innerText = title;
+      desc.innerText = description;
+      price_p.innerText = price;
+      // console.log('title:', title)
+      // console.log('image:', image)
+
+      div.append(img, title_p, desc, price_p, btn);
+      divs.append(div);
+    });
+  }
+  create();
 </script>

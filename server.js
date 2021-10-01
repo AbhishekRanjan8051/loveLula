@@ -35,6 +35,22 @@ const skincareSchema = new mongoose.Schema(
 
 const Skincare = mongoose.model("skincares", skincareSchema);
 
+const hairSchema = new mongoose.Schema(
+  {
+    image: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+    button: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+    timestamps: true,
+  }
+);
+
+const Hair = mongoose.model("hairs", hairSchema);
+
 const productSchema = new mongoose.Schema(
   {
     image: { type: String, required: true },
@@ -189,6 +205,17 @@ app.get("/skincares", async (req, res) => {
   return res.status(200).json({ index });
 });
 
+app.post("/hairs", async (req, res) => {
+  const index = await Hair.create(req.body);
+
+  return res.status(200).json({ index });
+});
+
+app.get("/hairs", async (req, res) => {
+  const index = await Hair.find().lean().exec();
+  return res.status(200).json({ index });
+});
+
 // RENDER
 
 app.get("/", async (req, res) => {
@@ -220,6 +247,23 @@ app.get("/views/skincare.ejs", async (req, res) => {
 app.get("/views/register.ejs", async (req, res) => {
   return res.render("register.ejs");
 });
+
+app.get("/views/body.ejs", async (req, res) => {
+  return res.render("body.ejs");
+});
+app.get("/views/makeup.ejs", async (req, res) => {
+  return res.render("makeup.ejs");
+});
+app.get("/views/nail.ejs", async (req, res) => {
+  return res.render("nail.ejs");
+});
+app.get("/views/vegan.ejs", async (req, res) => {
+  return res.render("vegan.ejs");
+});
+app.get("/views/offer.ejs", async (req, res) => {
+  return res.render("offer.ejs");
+});
+
 app.get("/register.ejs", async (req, res) => {
   return res.render("register.ejs");
 });

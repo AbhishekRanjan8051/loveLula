@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,43 +21,46 @@
       <div class="one">
         <div class="productsname">
           <div>Products</div>
-          <div><b>Hair</b></div>
-          <div>Colours</div>
-          <div>Conditioners</div>
-          <div>Shampoos</div>
-          <div>Styling & Treatments</div>
-          <div>Travel Sizes</div>
-          <div>Treatments</div>
-          <div>Volume</div>
+          <div><b>Special offers</b></div>
+          <div>Free Gift purchases</div>
+          <div>Sale</div>
+          <div>Sample</div>
+          <div>Selection Boxes</div>
         </div>
       </div>
       <div class="two">
         <div class="insidetwo">
           <img
-            src="https://www.lovelula.com/spree/taxons/headers/7235/original/haircare.jpg?1547741714"
+            src="https://www.lovelula.com/spree/taxons/headers/7244/original/special-offers.jpg?1391696538"
             alt=""
           />
           <div class="linecontainer">
             <div class="line"></div>
-            <div class="linetext">Natural and Organic Hair Care Products</div>
+            <div class="linetext">Natural and Organic Products for Nails</div>
             <div class="line"></div>
           </div>
           <br />
           <div class="details">
-            Become a natural show-off! Your hair is the most visible expression
-            of your inner health. Natural and organic hair products are both
-            luxurious and effective. Pure ingredients infuse vitality, boost
-            shine, add volume, smooth and replenish. Face the world with your
-            head held high.
+            The finishing touch - here you can find find nail polishes, polish
+            removers, cuticle care and more.
           </div>
           <br />
           <div class="dotted"></div>
         </div>
-         <div id="datacollection"></div>
+        <div id="datacollection"></div>
       </div>
     </div>
   </body>
 </html>
+
+<script type="module">
+  import footer from "../js/footer.js";
+
+  let div = document.createElement("div");
+
+  div.innerHTML = footer();
+  document.body.append(div);
+</script>
 
 <script type="module">
   import navbar from "../js/navbar.js";
@@ -65,14 +69,6 @@
 
   div.innerHTML = navbar();
   document.body.prepend(div);
-</script>
-<script type="module">
-  import footer from "../js/footer.js";
-
-  let div = document.createElement("div");
-
-  div.innerHTML = footer();
-  document.body.append(div);
 </script>
 <script>
   async function create() {
@@ -113,5 +109,4 @@
     });
   }
   create();
-  
 </script>

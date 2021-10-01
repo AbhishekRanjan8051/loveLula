@@ -47,14 +47,14 @@ function navbar() {
           <div>  <a href="../../views/brands.ejs">BRANDS</a></div>
           <div><a href="../../views/products.ejs">PRODUCTS</a></div>
           <div><a href="../../views/skincare.ejs">SKINCARE</a></div>
-          <div><a href="makeup.html">MAKEUP</a></div>
-          <div><a href="body.html">BODY</a></div>
+          <div><a href="../../views/makeup.ejs">MAKEUP</a></div>
+          <div><a href="../../views/body.ejs">BODY</a></div>
           <div><a href="../../views/hair.ejs">HAIR</a></div>
-          <div><a href="nail.html">NAILS</a></div>
-          <div><a href="vegan.html">VEGAN</a></div>
+          <div><a href="../../views/nail.ejs">NAILS</a></div>
+          <div><a href="../../views/vegan.ejs">VEGAN</a></div>
           <div><a href="../../views/gift.ejs">GIFTS</a></div>
-          <div><a href="offers.html">OFFERS</a></div>
-          <div><a href="beautybox.html">BEAUTY BOX</a></div>
+          <div><a href="../../views/offer.ejs">OFFERS</a></div>
+          <div><a href="##">BEAUTY BOX</a></div>
         </div>
       </div>
     </div>`;
